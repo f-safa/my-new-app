@@ -1,0 +1,47 @@
+body {
+  background: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+}
+h2 {
+  font-size: 90px;
+}
+ul {
+  list-style: none;
+  text-align: center;
+}
+.btn {
+  color: blueviolet;
+  background-color: rgb(162, 232, 76);
+}
+.card {
+  box-shadow: 2px 2px 8px;
+  border-radius: 40px;
+  text-align: center;
+}
+.card-title {
+  font-size: xx-large;
+}
+.card-text {
+  font-family: monospace;
+}
+.row {
+  padding-top: 80px;
+}
+.col-6 {
+  text-align: center;
+}
+small {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+.col-3 {
+  text-align: center;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: bold;
+}
+.form-control {
+  background: radial-gradient(
+    circle at 0% 0.5%,
+    rgb(241, 241, 242) 0.1%,
+    rgb(224, 226, 228) 100.2%
+  );
+}

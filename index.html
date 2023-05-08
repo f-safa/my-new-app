@@ -4,15 +4,140 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      h1{   color:red}
-      p
-    </style>
+    <title>weather prediction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@1&family=Merriweather:ital,wght@0,700;1,400&family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="src/style.css" rel="stylesheet" />
   </head>
-
   <body>
-    <h1>hello homework</h1>
-    <p>github project</p>
+    <div class="container">
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="col-6">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter Your City"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              id="city-input"
+            />
+          </div>
+          <div class="col-3">
+            <input class="btn btn-primary" type="submit" value="search" />
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <br />
+      <div class="row">
+        <div class="col-3">
+          <h1 id="city">Tehran</h1>
+          <div id="today-weather">
+            <span id="temprature">19</span>
+            <span class="units">℃</span>
+          </div>
+
+          <p id="current-date">show day and time</p>
+          <br />
+          <small> Partly Cloudy</small>
+        </div>
+        <div class="col-6">
+          <h2>🌥</h2>
+
+          <small>H:19° L:12°</small>
+          <ul>
+            <li>precipitation: <span id="precipitation"> 0</span>%</li>
+
+            <li>humidity:77%</li>
+            <li>wind:<span id="wind"> 8</span> km/h</li>
+          </ul>
+        </div>
+        <div class="col-3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-2">
+          <div class="card" width="8rem">
+            <div class="card-body">
+              <h5 class="card-title">🌥</h5>
+              <p class="card-text">
+                Tue
+                <br />
+                H:21° L:11°
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card" width="8rem">
+            <div class="card-body">
+              <h5 class="card-title">☀</h5>
+              <p class="card-text">
+                Wed
+                <br />
+                H:23° L:11°
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card" width="8rem">
+            <div class="card-body">
+              <h5 class="card-title">☀</h5>
+              <p class="card-text">
+                Thu
+                <br />
+                H:23° L:11°
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card" width="8rem">
+            <div class="card-body">
+              <h5 class="card-title">🌧</h5>
+              <p class="card-text">
+                Fri
+                <br />
+                H:22° L:12°
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card" width="8rem">
+            <div class="card-body">
+              <h5 class="card-title">🌧</h5>
+              <p class="card-text">
+                Sat
+                <br />
+                H:13° L:6°
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

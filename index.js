@@ -1,4 +1,3 @@
-//1
 let now = new Date();
 
 let dates = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];

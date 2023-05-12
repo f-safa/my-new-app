@@ -6,7 +6,13 @@ h2 {
 }
 ul {
   list-style: none;
-  text-align: center;
+  text-align: left;
+}
+li {
+  display: block;
+}
+.weather-app {
+  max-width: 600 px;
 }
 .btn {
   color: blueviolet;
@@ -27,7 +33,7 @@ ul {
   padding-top: 80px;
 }
 .col-6 {
-  text-align: center;
+  text-align: left;
 }
 small {
   font-family: "Times New Roman", Times, serif;

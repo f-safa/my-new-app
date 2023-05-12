@@ -24,23 +24,32 @@
     <div class="container">
       <div class="weather-app">
         <form class="search-form" id="search-form">
-          <div class="col-6">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Enter Your City"
-              aria-label="Recipient's username"
-              aria-describedby="button-addon2"
-              id="city-input"
-            />
-          </div>
-          <div class="col-3">
-            <input class="btn btn-primary w-100" type="submit" value="search" />
-          </div>
-          <div class="col-3">
-            <button class="btn btn-success w-100" id="current-location-button">
-              Current
-            </button>
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Your City"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                id="city-input"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                class="btn btn-primary w-100"
+                type="submit"
+                value="search"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
           </div>
         </form>
       </div>
@@ -58,6 +67,7 @@
           <br />
           <small> Partly Cloudy</small>
         </div>
+        <div class="col-3"></div>
         <div class="col-6">
           <h2>🌥</h2>
 
@@ -69,7 +79,6 @@
             <li>wind:<span id="wind"> 8</span> km/h</li>
           </ul>
         </div>
-        <div class="col-3"></div>
       </div>
 
       <div class="row">

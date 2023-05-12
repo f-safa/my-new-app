@@ -11,6 +11,7 @@ ul {
 li {
   display: block;
 }
+
 .weather-app {
   max-width: 600 px;
 }
@@ -30,14 +31,27 @@ li {
   font-family: monospace;
 }
 .row {
-  padding-top: 80px;
+  padding-top: 70px;
 }
 .col-6 {
   text-align: left;
 }
+.weather-temprature img {
+  height: 70 px;
+  width: 70 px;
+  margin-left: 20px;
+}
+.today-weather.units {
+  position: relative;
+  top: -34px;
+  font-size: 15 px;
+}
 small {
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
+}
+a {
+  font-size: 1 px;
 }
 .col-3 {
   text-align: center;

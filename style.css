@@ -10,6 +10,14 @@ ul {
 }
 li {
   display: block;
+  text-transform: capitalize;
+}
+small {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+a {
+  font-size: 1 px;
 }
 
 .weather-app {
@@ -46,13 +54,7 @@ li {
   top: -34px;
   font-size: 15 px;
 }
-small {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-}
-a {
-  font-size: 1 px;
-}
+
 .col-3 {
   text-align: center;
   font-family: "Mochiy Pop One", sans-serif;

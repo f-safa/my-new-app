@@ -35,14 +35,14 @@
                 id="city-input"
               />
             </div>
-            <div class="col-3">
+            <div class="col-2">
               <input
                 class="btn btn-primary w-100"
                 type="submit"
                 value="search"
               />
             </div>
-            <div class="col-3">
+            <div class="col-2">
               <button
                 class="btn btn-success w-100"
                 id="current-location-button"
@@ -65,19 +65,20 @@
 
           <p id="current-date">show day and time</p>
           <br />
-          <small> Partly Cloudy</small>
+        
         </div>
-        <div class="col-3"></div>
+        <div class="col-2"></div>
         <div class="col-6">
-          <div class="weather-temprature">
+          <div class="d-flex weather-temprature">
             <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
-              alt="partly-cloudy"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQBJREFUaN7t2csNwyAMBmBGYYSMwhgdgxEYjRW6ARu4HNyqB0CKednElf5b2/hLSALGAICRHKMABSjgUMDdD7xfLifkxByoJOJ33O3/nwHIhVgsKDWKriXhb+0WQD6wJxZegvhlADzrcUDhpeFlpwLyAa5BZ711Na4pgAXFNxFdABw2K4r/R9iRgLiw+N89MQSATxvYFN8F2DB0qkOJCggbi/8m9AASA0AiAXBuA0ziKIDACBAogMgIECkAYBUFKEABzwOIf4yKf5HJnkqIn8wxmk775y5oxC8pj1jUH9FWEd/YOqK1eERz94j2euFqUCF7NzjYbzHpLqUCFKCAJfkAq7RimK7qUtAAAAAASUVORK5CYII="
+              alt="clear" id="icon"
             />
           </div>
 
-          <small>H:19° L:12°</small>
+         
           <ul>
+            <li> <small id="description"> sunny</small></li>
             <li>precipitation: <span id="precipitation"> 0</span>%</li>
 
             <li>humidity:77%</li>
@@ -148,11 +149,9 @@
           </div>
         </div>
       </div>
-      <small
-        ><a href="https://github.com/f-safa/my-new-app.git" target="-blank">
+      <a href="https://github.com/f-safa/my-new-app.git" target="-blank">
           open source code
-        </a>
-      </small>
+   
     </div>
     <script src="index.js"></script>
   </body>

@@ -22,6 +22,8 @@ function displayWeatherCondition(response) {
   document.querySelector("#temprature").innerHTML = Math.round(
     response.data.main.temp
   );
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather.description;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );

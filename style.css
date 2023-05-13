@@ -49,10 +49,10 @@ a {
   width: 70 px;
   margin-left: 20px;
 }
-.today-weather.units {
+.units {
   position: relative;
-  top: -34px;
-  font-size: 15 px;
+  top: -8px;
+  font-size: 9 px;
 }
 
 .col-3 {

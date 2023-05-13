@@ -23,10 +23,11 @@ function displayWeatherCondition(response) {
     response.data.main.temp
   );
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather.description;
+  descriptionElement.innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 function searchCity(city) {
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";

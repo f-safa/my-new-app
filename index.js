@@ -19,9 +19,10 @@ document.querySelector(
 //2
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temprature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemprature = response.data.main.temp;
+  document.querySelector("#temprature").innerHTML =
+    Math.round(celsiusTemprature);
+
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -59,19 +60,35 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFarenheitTemprature(event) {
+  event.preventDefault();
+
+  let tempratureElement = document.querySelector("#temprature");
+  let farenheitTemprature = (celsiusTemprature * 9) / 5 + 32;
+  //temprature = Number(temprature);
+  tempratureElement.innerHTML = Math.round(farenheitTemprature);
+}
+
+function displayCelciusTemprature(event) {
+  event.preventDefault();
+  celciuslink.classList.add("active");
+  farenheitlink.classList.remove("active");
+  let tempratureElement = document.querySelector("#temprature");
+  tempratureElement.innerHTML = Math.round(celsiusTemprature);
+}
+
+let celsiusTemprature = null;
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let farenheitlink = document.querySelector("#farenheit-link");
+farenheitlink.addEventListener("click", displayFarenheitTemprature);
+
+let celciuslink = document.querySelector("#celcius-link");
+celciuslink.addEventListener("click", displayCelciusTemprature);
+
 searchCity("new york");
-
-//3
-
-function change(event) {
-  event.preventDefault();
-  let tempratureelement = document.querySelector("#temprature");
-  let temprature = tempratureelement.innerHTML;
-  temprature = Number(temprature);
-  tempratureelement.innerHTML = Math.round(temprature * 1.8 + 32);
-}

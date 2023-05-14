@@ -67,3 +67,6 @@ a {
     rgb(224, 226, 228) 100.2%
   );
 }
+.today-weather .active {
+  color: black;
+}

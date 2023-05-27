@@ -16,7 +16,8 @@ document.querySelector(
   "#current-date"
 ).innerHTML = `${today} ${currentTime} : ${currentMinutes}`;
 
-function displayForcast() {
+function displayForcast(response) {
+  console.log(response.data.daily);
   let forcastElement = document.querySelector("#forcast");
   let forcastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -47,6 +48,12 @@ function displayForcast() {
   forcastHTML = forcastHTML + `</div>`;
   forcastElement.innerHTML = forcastHTML;
 }
+function getForcast(coordinates) {
+  let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForcast);
+}
 
 //2
 function displayWeatherCondition(response) {
@@ -67,6 +74,7 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForcast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
@@ -124,4 +132,3 @@ let celciuslink = document.querySelector("#celcius-link");
 celciuslink.addEventListener("click", displayCelciusTemprature);
 
 searchCity("new york");
-displayForcast();

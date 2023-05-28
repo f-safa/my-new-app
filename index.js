@@ -16,34 +16,50 @@ document.querySelector(
   "#current-date"
 ).innerHTML = `${today} ${currentTime} : ${currentMinutes}`;
 
+function formatDay(timestemp) {
+  let date = new Date(timestemp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForcast(response) {
-  console.log(response.data.daily);
+  let forcast = response.data.daily;
   let forcastElement = document.querySelector("#forcast");
   let forcastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
-      `<div class="col-2">
+  forcast.forEach(function (forcastDay, index) {
+    if (index < 6) {
+      forcastHTML =
+        forcastHTML +
+        `<div class="col-2">
             <div class="card" width="8rem">
               <div class="card-body">
                 <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAQBJREFUaN7t2csNwyAMBmBGYYSMwhgdgxEYjRW6ARu4HNyqB0CKednElf5b2/hLSALGAICRHKMABSjgUMDdD7xfLifkxByoJOJ33O3/nwHIhVgsKDWKriXhb+0WQD6wJxZegvhlADzrcUDhpeFlpwLyAa5BZ711Na4pgAXFNxFdABw2K4r/R9iRgLiw+N89MQSATxvYFN8F2DB0qkOJCggbi/8m9AASA0AiAXBuA0ziKIDACBAogMgIECkAYBUFKEABzwOIf4yKf5HJnkqIn8wxmk775y5oxC8pj1jUH9FWEd/YOqK1eERz94j2euFqUCF7NzjYbzHpLqUCFKCAJfkAq7RimK7qUtAAAAAASUVORK5CYII="
-                  alt="clear"
+                  src="http://openweathermap.org/img/wn/${
+                    forcastDay.weather[0].icon
+                  }@2x.png"
+                  alt=""
                   id="icon"
                 />
-                <h5 class="card-title">🌥</h5>
+             
                 <p class="weather-forcast-date">
-                  ${day}</p>
+                  ${formatDay(forcastDay.dt)}</p>
               
                 <div class="weather-forcast-temprature">
-                  <span class="forcast-max"> H:21°</span> 
-                  <span calss="forcast-min"> L:11°</span>
+                  <span class="forcast-max">H:${Math.round(
+                    forcastDay.temp.max
+                  )}°</span> 
+                  <span calss="forcast-min"> L:${Math.round(
+                    forcastDay.temp.min
+                  )}°</span>
                 </div>
                 
               </div>
             </div>
         </div>`;
+    }
   });
   forcastHTML = forcastHTML + `</div>`;
   forcastElement.innerHTML = forcastHTML;
